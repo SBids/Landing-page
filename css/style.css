@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Aclonica&display=swap");
 
-*{
+* {
   /* to remove default margin and padding of div */
   padding: 0;
   margin: 0;
 }
 
-.m-f{
-  font-family: 'Aclonica', sans-serif;
+.m-f {
+  font-family: "Aclonica", sans-serif;
   text-transform: uppercase;
 }
 
-body{
+body {
   /* .. signifies one step out of folder where style css is situated */
   background-image: url(../images/back-img.jpg);
   background-size: cover;
@@ -20,40 +20,56 @@ body{
   position: relative;
 }
 
-main{
+main {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
 }
 
-.container{
+.container {
   width: 70%;
   /* auto gives 15% margin left right(100 - 30) */
   margin: 0 auto;
+  /* height equal to the parent container  */
+  height: 100%;
 }
 
-.header{
+.header {
   height: 100vh;
   color: #ffffff;
   line-height: 50px;
 }
 
-.header-content{
-  padding-top: 40vh;
+.header-content-wrapper {
+  /* this code centers the child elements on every page size  */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.header-content {
+  /* padding-top: 40vh; */
   text-align: center;
 }
 
-.header-content h1, .intro-content h1, .contact-section h1{
+.header-content h1,
+.intro-content h1,
+.contact-section h1 {
   font-size: 42px;
 }
 
-.header-content h2 span{
+.header-content h2 span {
   color: #f1c11a;
   line-height: 100px;
 }
-
-.btn{
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.btn {
   background-color: transparent;
   border: 3px solid #ffffff;
   padding: 15px 35px;
@@ -64,232 +80,285 @@ main{
   transition: all 400ms ease-in-out;
 }
 
-.btn-fill{
+.btn-fill {
   background-color: #ffffff;
   color: #000000;
 }
 
-.btn-fill:hover{
+.btn-fill:hover {
   background-color: #f1c11a;
   border-color: transparent;
 }
 
-.btn-trans:hover{
+.btn-trans:hover {
   background-color: #f1c11a;
   color: #000000;
   border-color: transparent;
 }
 
-.intro{
+.intro {
   background-color: #ffffff;
   padding: 15vh 0;
 }
 
-.intro-content{
-  height: 50vh;
+.intro-content {
+  min-height: 50vh;
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 2rem;
 }
 
-.intro-content div{
+.intro-content div {
   width: 50%;
 }
 
-.intro-text p{
+.intro-text p {
   text-align: justify;
   color: #828282;
   line-height: 40px;
 }
 
-.services{
+.services {
   background-color: #f1c11a;
-  height: 50vh;
-  clip-path: polygon(0 0, 15% 0, 50% 20%, 85% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  min-height: 50vh;
+  clip-path: polygon(
+    0 0,
+    15% 0,
+    50% 20%,
+    85% 0,
+    100% 0,
+    100% 100%,
+    0 100%,
+    0 0
+  );
   margin-top: -15vh;
+  padding-bottom: 2rem;
 }
 
-.service-content{
+.service-content {
   display: flex;
   flex-wrap: wrap;
 }
 
-.bucket{
+.bucket {
   width: 25%;
   margin: 130px 3%;
   color: #ffffff;
 }
 
-.bucket p{
+.bucket p {
   color: #000000;
   text-align: justify;
   line-height: 25px;
 }
 
-.contact{
+.contact {
   background-color: #ffffff;
   padding: 10vh 0;
   text-align: center;
 }
 
-input[type='text'], input[type=email], textarea{
+input[type="text"],
+input[type="email"],
+textarea {
   width: 100%;
   padding: 12px;
   border-color: 1px solid #cccccc;
 }
 
-.contact-section div{
+.contact-section div {
   padding: 10px 3%;
 }
 
-.btn-submit{
+.btn-submit {
   background-color: #000000;
   color: #ffffff;
 }
 
-.btn-submit:hover{
+.btn-submit:hover {
   background-color: #f1c11a;
   border-color: transparent;
   color: #000000;
 }
 
-footer{
+footer {
   background-color: #f1c11a;
-  clip-path: polygon(0 0, 15% 0, 50% 20%, 85% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  clip-path: polygon(
+    0 0,
+    15% 0,
+    50% 20%,
+    85% 0,
+    100% 0,
+    100% 100%,
+    0 100%,
+    0 0
+  );
   margin-top: -10vh;
   text-align: center;
   padding-top: 15vh;
   padding-bottom: 30px;
 }
 
-@media screen and (max-width: 768px){
-  .header-content h2{
+@media screen and (max-width: 768px) {
+  .container.intro-content,
+  .container.service-content {
+    width: 90%;
+  }
+  .header-content h2 {
     font-size: 20px;
+    line-height: 0px;
   }
 
-  .intro-content{
+  .intro-content {
     display: block;
-    height: 90vh;
+    /* min-height: 90vh; */
   }
 
-  .intro-content div{
+  .intro-content div {
     width: 100%;
   }
 
-  .services{
-    height: 100vh;
-    clip-path: polygon(0 0, 15% 0, 50% 5%, 85% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  .services {
+    clip-path: polygon(
+      0 0,
+      15% 0,
+      50% 5%,
+      85% 0,
+      100% 0,
+      100% 100%,
+      0 100%,
+      0 0
+    );
   }
 
-  .service-content{
+  .service-content {
     display: block;
     margin-top: -15vh;
-    padding-top: 1px;
+    padding-top: 3rem;
   }
 
-  .bucket{
+  .bucket {
     width: 100%;
     margin: 80px 3%;
   }
 }
 
-
 /* for 425 x 536 screen */
-@media screen and (max-width: 425px){
+@media screen and (max-width: 425px) {
+  .header-content h1,
+  .intro-content h1,
+  .contact-section h1 {
+    font-size: 30px;
+  }
 
-  .header-content h1, .intro-content h1, .contact-section h1{
-  font-size: 30px;
-}
-
-  .header-content h2{
+  .header-content h2 {
     font-size: 12px;
   }
 
-  .header-content h2 span{
+  .header-content h2 span {
     line-height: 50px;
   }
 
-  .btn{
+  .btn {
     padding: 10px 25px;
     margin-right: 10px;
   }
 
-
-  .intro-content{
+  .intro-content {
     display: block;
-    height: 115vh;
+    /* height: 115vh; no need fot min height as it gets adjusted itself   */
   }
 
-  .intro-content div{
+  .intro-content div {
     width: 100%;
   }
 
-  .intro-text p{
+  .intro-text p {
     line-height: 27px;
   }
 
-  .services{
-    height: 170vh;
-    clip-path: polygon(0 0, 15% 0, 50% 5%, 85% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  .services {
+    clip-path: polygon(
+      0 0,
+      15% 0,
+      50% 5%,
+      85% 0,
+      100% 0,
+      100% 100%,
+      0 100%,
+      0 0
+    );
   }
 
-  .service-content{
+  .service-content {
     display: block;
     margin-top: -15vh;
     padding-top: 1px;
   }
+  /* adjusts the spacing for title  */
+  .container.service-content {
+    padding-top: 2rem;
+  }
 
-  .bucket{
+  .bucket {
     width: 100%;
     margin: 50px 3%;
   }
 }
 
 /* for 375 x 536 screen */
-@media screen and (max-width: 375px){
+@media screen and (max-width: 375px) {
+  .header-content h1,
+  .intro-content h1,
+  .contact-section h1 {
+    font-size: 25px;
+  }
 
-  .header-content h1, .intro-content h1, .contact-section h1{
-  font-size: 25px;
-}
-
-  .header-content h2{
+  .header-content h2 {
     font-size: 10px;
   }
 
-  .header-content h2 span{
+  .header-content h2 span {
     line-height: 45px;
   }
 
-  .btn{
+  .btn {
     padding: 10px 20px;
     margin-right: 8px;
   }
 
-
-  .intro-content{
+  .intro-content {
     display: block;
-    height: 118vh;
   }
 
-  .intro-content div{
+  .intro-content div {
     width: 100%;
   }
 
-  .intro-text p{
+  .intro-text p {
     line-height: 27px;
   }
 
-  .services{
-    height: 190vh;
-    clip-path: polygon(0 0, 10% 0, 50% 5%, 90% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  .services {
+    clip-path: polygon(
+      0 0,
+      10% 0,
+      50% 5%,
+      90% 0,
+      100% 0,
+      100% 100%,
+      0 100%,
+      0 0
+    );
   }
 
-  .service-content{
+  .service-content {
     display: block;
     margin-top: -15vh;
     padding-top: 1px;
   }
 
-  .bucket{
+  .bucket {
     width: 100%;
     margin: 50px 3%;
   }
